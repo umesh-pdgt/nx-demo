@@ -1,17 +1,22 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-import React from 'react';
+import styled from 'styled-components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Welcome from './welcome';
 
+const StyledApp = styled.div`
+  // Your style here
+`;
+
 const queryClient = new QueryClient();
 
-export const App = () => {
+export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Welcome />
+      <StyledApp>
+        <Welcome />
+      </StyledApp>
     </QueryClientProvider>
   );
-};
+}
 
 export default App;
